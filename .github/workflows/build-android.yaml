@@ -31,7 +31,7 @@ jobs:
         with:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
       - name: Build APK
-        uses: flutter build apk --no-tree-share-icons
+        run: flutter build apk --no-tree-shake-icons
       - name: Check Output File
         run: |
           cd build/app/outputs/flutter-apk/
